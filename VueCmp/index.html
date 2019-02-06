@@ -1,0 +1,67 @@
+<html>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <!-- <script src="./node_modules/popper.js/dist/popper.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-resource/dist/vue-resource.js"></script>
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+          float: left;
+          width: 25%;
+          padding: 15px;
+          height: 25px;
+        }
+        
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        </style>
+    <body>
+        <div id="app">
+            <h2>{{ benvenuto }}</h2>
+
+            <div class="row list-group" v-for="todo in todos">
+                <div class="list-group-item">
+                    <div class="column">ID: {{ twett.id }}</div>
+                    <div class="column">NAME: {{ twett.name }}</div>
+                    <div class="column">AUTHOR: {{ twett.author }}</div>
+                    <div class="column">MESSAGE: {{ twett.message }}</div>
+                
+                </div>
+            </div>
+
+            <div class="row list-group">
+                <div class="list-group-item">
+                    <div>twett: {{ twett }}</div>
+                </div>
+            </div>
+
+            <input v-model="name" placeholder="name"> 
+            <input v-model="description" placeholder="description"> 
+            <input v-model="assignedTo" placeholder="assignedTo"> 
+            <button v-on:click="newTwett">new twett!</button>
+            <button v-on:click="getTwettById">show id</button>
+            <br>
+            <br>
+            <input v-model="id" placeholder="id"> 
+            <button v-on:click="deleteTwett">delete twett by id</button>
+            <br>
+            <input v-model="user" placeholder="user"> 
+            <button v-on:click="getTwettByAuthor">show twett by author</button>
+
+
+
+        </div>          
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+    <script src="./app.js"></script>
+</body>
+  
+</html>
